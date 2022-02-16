@@ -60,7 +60,7 @@ def update_board(board: Board, player: Player, coords: Coords, size):
     """
     if coords[0] < size or coords[1] < size:
         board[coords[0]][coords[1]] = player
-        
+
 
 def get_move(player: Player) -> Coords:
     """
@@ -89,7 +89,7 @@ def show_winner(player: Player):
 
     :param player: the player who won
     """
-    print(f"\nAnd the WINNER is: {player}!!!!!!!!!!!!")
+    print(f"\nAnd the WINNER is: {player} !!!!!!!!!!!!")
 
 
 def switch_player(current_player: Player) -> Player:
