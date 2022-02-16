@@ -50,7 +50,7 @@ def won(player: Player, board: Board) -> bool:
     return check_rows(board, player) or check_columns(board, player)
 
 
-def update_board(board: Board, player: Player, coords: Coords):
+def update_board(board: Board, player: Player, coords: Coords, size):
     """
     Updates a game board with a given player's move.
 
@@ -58,8 +58,9 @@ def update_board(board: Board, player: Player, coords: Coords):
     :param player: the player that made the move
     :param coords: the coordinates (row, column) of the player's move
     """
-    board[coords[0]][coords[1]] = player
-
+    if coords[0] < size or coords[1] < size:
+        board[coords[0]][coords[1]] = player
+        
 
 def get_move(player: Player) -> Coords:
     """
@@ -114,7 +115,7 @@ def play_game(board_size: int = None):
     while not won(current_player, board):
         show_board(board)
         coordinates = get_move(current_player)
-        update_board(board, current_player, coordinates)
+        update_board(board, current_player, coordinates,board_size)
         current_player = switch_player(current_player)
     show_winner(current_player)
 
