@@ -88,7 +88,7 @@ def show_winner(player: Player):
 
     :param player: the player who won
     """
-    print(f"\nAnd the WINNER is: .....\n!!!!!!!!!!!! {player} !!!!!!!!!!!!")
+    print(f"\nAnd the WINNER is: {player}!!!!!!!!!!!!")
 
 
 def switch_player(current_player: Player) -> Player:
